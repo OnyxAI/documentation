@@ -5,6 +5,7 @@
 ## About Onyx
 
 * [Presentation](about-onyx/presentation.md)
+* [Changelog](about-onyx/changelog.md)
 * [FAQ](about-onyx/faq.md)
 
 ## Using Onyx
