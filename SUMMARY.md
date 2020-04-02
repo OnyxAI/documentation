@@ -14,24 +14,5 @@
 
 ## API
 
-* [Presentation](api/presentation.md)
 * [Users](api/users.md)
-* [Calendar](api/calendar.md)
-* [Geolocalisation](api/geolocalisation.md)
-* [House](api/house.md)
-* [Machine](api/machine.md)
-* [Room](api/room.md)
-* [Kernel](api/kernel.md)
-* [Notification](api/notification.md)
-* [Skills](api/skills.md)
-* [Weather](api/weather.md)
-* [Wiki](api/wiki.md)
-
-## Skills
-
-* [Untitled](skills/untitled.md)
-
-## Technologies
-
-* [Untitled](technologies/untitled.md)
 

@@ -16,8 +16,8 @@ This endpoint allows you to get all users.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
-Authentication token
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -25,7 +25,7 @@ Authentication token
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -42,20 +42,20 @@ Cake successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://onyx-ip" path="/api/get\_access\_token" %}
+{% api-method method="get" host="http://onyx-ip" path="/api/users/get" %}
 {% api-method-summary %}
-Get Access token
+Get User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get you access token with your refresh token
+Get information about your current user
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-Refresh token
+Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 {% endapi-method-request %}
@@ -63,12 +63,14 @@ Refresh token
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Getting access token
+
 {% endapi-method-response-example-description %}
 
-```javascript
+```
 {
-    "access_token": "token"
+    "username": "User",
+    "email": "mail@user.com",
+    ...
 }
 ```
 {% endapi-method-response-example %}
@@ -76,32 +78,26 @@ Getting access token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://onyx-ip" path="/api/user/register" %}
+{% api-method method="post" host="http://onyx-ip" path="/api/users/get" %}
 {% api-method-summary %}
-Register User
+Get User by ID
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Register a new user
+Getting user information by id
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
 {% api-method-form-data-parameters %}
-{% api-method-parameter name="verifpassword" type="string" required=true %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="password" type="string" required=true %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="email" type="string" required=true %}
-
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="username" type="string" required=true %}
-
+{% api-method-parameter name="id" type="number" required=true %}
+User ID
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
@@ -112,9 +108,11 @@ Register a new user
 
 {% endapi-method-response-example-description %}
 
-```javascript
+```
 {
-    "status": "success"
+    "username": "User",
+    "email": "mail@user.com",
+    ...
 }
 ```
 {% endapi-method-response-example %}
@@ -122,7 +120,7 @@ Register a new user
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://onyx-ip" path="/api/user/login" %}
+{% api-method method="post" host="http://onyx-ip" path="/api/users/login" %}
 {% api-method-summary %}
 Login User
 {% endapi-method-summary %}
@@ -162,7 +160,94 @@ Login a user
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://onyx-ip" path="/api/user/logout\_access" %}
+{% api-method method="post" host="http://onyx-ip" path="/api/users/register" %}
+{% api-method-summary %}
+Register User
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Register a new user
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="lastname" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="firstname" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="password" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="email" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="username" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "status": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="http://onyx-ip" path="/api/users/token\_valid" %}
+{% api-method-summary %}
+Token Valid
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Verify if a token is valid
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Access token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Getting access token
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "status": "success",
+    "user": {
+        ...
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="http://onyx-ip" path="/api/users/logout\_access" %}
 {% api-method-summary %}
 Logout Access
 {% endapi-method-summary %}
@@ -188,7 +273,8 @@ access\_token
 
 ```javascript
 {
-    "status": "success"
+    "status": "success",
+    "message": "onyx.auth.logout_success"
 }
 ```
 {% endapi-method-response-example %}
@@ -196,7 +282,7 @@ access\_token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://onyx-ip" path="/api/user/logout\_refresh" %}
+{% api-method method="get" host="http://onyx-ip" path="/api/users/logout\_refresh" %}
 {% api-method-summary %}
 Logout Refresh
 {% endapi-method-summary %}
@@ -222,7 +308,8 @@ refresh token
 
 ```javascript
 {
-    "status": "success"
+    "status": "success",
+    "message": "onyx.auth.logout_success"
 }
 ```
 {% endapi-method-response-example %}
@@ -230,28 +317,63 @@ refresh token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://onyx-ip" path="/api/user/delete/<id>" %}
+{% api-method method="get" host="http://onyx-ip" path="/api/users/refresh\_token" %}
 {% api-method-summary %}
-Delete Account
+Refresh
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Admin : Delete an account
+Refresh an access token
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
-Account id
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-Admin token
+Refresh Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success",
+    "access_token": "token"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="http://onyx-ip" path="/api/users/color" %}
+{% api-method-summary %}
+Color
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Change the main color
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="color" type="string" required=true %}
+Color
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -270,69 +392,41 @@ Admin token
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://onyx-ip" path="/api/user/manage/<id>" %}
+{% api-method method="post" host="http://onyx-ip" path="/api/users/manage" %}
 {% api-method-summary %}
 Manage User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Admin : Manage a user account
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
-Account id
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Admin token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "status": "success"
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="post" host="http://onyx-ip" path="/api/user/change" %}
-{% api-method-summary %}
-Modify Account
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Modify account information
+Manage your account
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-token
+Tokenu
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-form-data-parameters %}
-{% api-method-parameter name="password" type="string" required=false %}
+{% api-method-parameter name="lastname" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="username" type="string" required=false %}
+{% api-method-parameter name="firstname" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="language" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="verifPassword" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="password" type="string" required=false %}
 
 {% endapi-method-parameter %}
 
@@ -340,7 +434,7 @@ token
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="lastpassword" type="string" required=true %}
+{% api-method-parameter name="username" type="string" required=false %}
 
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
