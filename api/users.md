@@ -66,7 +66,7 @@ Token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "username": "User",
     "email": "mail@user.com",
@@ -108,7 +108,7 @@ User ID
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "username": "User",
     "email": "mail@user.com",
@@ -341,7 +341,7 @@ Refresh Token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success",
     "access_token": "token"
@@ -480,7 +480,7 @@ Token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status: "success",
     "nav": [],
@@ -537,7 +537,7 @@ The selected round on the nav screen
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }
@@ -581,7 +581,7 @@ Position on the nav circle
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }

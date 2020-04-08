@@ -5,37 +5,10 @@ description: Neurons API
 # Neurons
 
 {% api-method method="get" host="http://onyx-url" path="/api/neurons/get\_all" %}
-{% api-method-summary %}
-Get installed neurons
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Getting all installed neurons
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-{
-    "status": "success",
-    "neurons": []
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
 {% api-method method="get" host="http://onyx-url" path="/api/neurons/get\_store\_list" %}
 {% api-method-summary %}
-Get Store
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -57,7 +30,7 @@ Token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success",
     "neurons": []
@@ -102,7 +75,7 @@ Neuron git url
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }
@@ -142,7 +115,7 @@ Neuron raw name
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }

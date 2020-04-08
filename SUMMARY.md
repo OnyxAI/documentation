@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Documentation](README.md)
+* [Onyx](README.md)
 
 ## About Onyx
 

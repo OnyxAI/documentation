@@ -28,7 +28,7 @@ Token
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "status": "success"
 }
