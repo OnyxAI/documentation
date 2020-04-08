@@ -405,7 +405,7 @@ Manage your account
 {% api-method-request %}
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
-Tokenu
+Token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
@@ -447,6 +447,141 @@ Tokenu
 {% endapi-method-response-example-description %}
 
 ```javascript
+{
+    "status": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="http://onyx-ip" path="/api/users/nav" %}
+{% api-method-summary %}
+Get Nav
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Getting the nav of the user
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status: "success",
+    "nav": [],
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="http://onyx-ip" path="/api/users/nav" %}
+{% api-method-summary %}
+Add Nav
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Adding a new nav button
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="icon" type="string" required=false %}
+Nav Icon
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="url" type="string" required=false %}
+Nav url
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="color" type="string" required=false %}
+Button color
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="position" type="string" required=true %}
+Position on the nav circle
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="buttonNumber" type="string" required=true %}
+The selected round on the nav screen
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="put" host="http://onyx-ip" path="/api/users/nav" %}
+{% api-method-summary %}
+Remove Nav
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Reove a nav button
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-form-data-parameters %}
+{% api-method-parameter name="buttonNumber" type="string" required=true %}
+The selected round on the nav screen
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="position" type="string" required=true %}
+Position on the nav circle
+{% endapi-method-parameter %}
+{% endapi-method-form-data-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
 {
     "status": "success"
 }

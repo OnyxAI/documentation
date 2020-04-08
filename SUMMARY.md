@@ -14,5 +14,7 @@
 
 ## API
 
+* [Neurons](api/neurons.md)
+* [Settings](api/settings.md)
 * [Users](api/users.md)
 
