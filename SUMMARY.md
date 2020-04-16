@@ -8,9 +8,9 @@
 * [Changelog](about-onyx/changelog.md)
 * [FAQ](about-onyx/faq.md)
 
-## Using Onyx
+## Utiliser Onyx <a id="using-onyx"></a>
 
-* [Get Started](using-onyx/get-started.md)
+* [Commencer](using-onyx/get-started.md)
 
 ## API
 

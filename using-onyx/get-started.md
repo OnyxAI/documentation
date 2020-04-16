@@ -1,6 +1,6 @@
 ---
-description: Get started with Onyx
+description: Comment débuter avec Onyx.
 ---
 
-# Get Started
+# Commencer
 
