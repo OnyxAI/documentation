@@ -2,15 +2,15 @@
 description: Settings API
 ---
 
-# Settings
+# Paramètres
 
 {% api-method method="get" host="http://onyx-url" path="/api/settings/get\_onyx\_data" %}
 {% api-method-summary %}
-Get Onyx Data
+Onyx Data
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Download or Update Onyx Data
+Récupérer les data d'Onyx
 {% endapi-method-description %}
 
 {% api-method-spec %}

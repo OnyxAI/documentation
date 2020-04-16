@@ -2,7 +2,7 @@
 description: User API
 ---
 
-# Users
+# Utilisateurs
 
 {% api-method method="get" host="http://onyx-ip" path="/api/users" %}
 {% api-method-summary %}
@@ -10,7 +10,7 @@ Get Users
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint allows you to get all users.
+Récupérer tous les utilisateurs inscrits
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -48,7 +48,7 @@ Get User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Get information about your current user
+Récupérer les informations sur son compte
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -84,7 +84,7 @@ Get User by ID
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Getting user information by id
+Récupérer les infos d'un utilisateur avec son id
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -126,7 +126,7 @@ Login User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Login a user
+Connecter un utilisateur
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -166,7 +166,7 @@ Register User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Register a new user
+Inscrire un utilisateur
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -216,7 +216,7 @@ Token Valid
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Verify if a token is valid
+Vérifier si un token est valide
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -253,7 +253,7 @@ Logout Access
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Revoke an access token
+Revoquer un token d'accès
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -288,7 +288,7 @@ Logout Refresh
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Revoke a refresh token
+Révoquer un token de rafraichissement
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -323,7 +323,7 @@ Refresh
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Refresh an access token
+Rafraichir un token d'accès
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -358,7 +358,7 @@ Color
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Change the main color
+Changer la couleur du compte
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -398,7 +398,7 @@ Manage User
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Manage your account
+Modifier son compte
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -462,7 +462,7 @@ Get Nav
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Getting the nav of the user
+Récupérer la NavBar de l'utilisateur
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -497,7 +497,7 @@ Add Nav
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Adding a new nav button
+Ajouter un nouveau bouton
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -553,7 +553,7 @@ Remove Nav
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Reove a nav button
+Supprimer un bouton
 {% endapi-method-description %}
 
 {% api-method-spec %}

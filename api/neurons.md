@@ -1,18 +1,51 @@
 ---
-description: Neurons API
+description: Neurones API
 ---
 
-# Neurons
+# Neurones
 
-{% api-method method="get" host="http://onyx-url" path="/api/neurons/get\_all" %}
-
-{% api-method method="get" host="http://onyx-url" path="/api/neurons/get\_store\_list" %}
+{% api-method method="get" host="http://onyx-url" path="/api/neurons/get" %}
 {% api-method-summary %}
-
+Neurones
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Getting all neurons of the store
+Récupérer la liste de tous les neurones installés
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Token
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "status": "success",
+    "neurons": []
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="http://onyx-url" path="/api/neurons/get\_store\_list" %}
+{% api-method-summary %}
+Store Neurones
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Récupérer tous les neurones du store
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -43,11 +76,11 @@ Token
 
 {% api-method method="post" host="http://onyx-url" path="/api/neurons/install" %}
 {% api-method-summary %}
-Install Neuron
+Installer un Neurone
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Install a neuron
+Installer un neurone
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -60,11 +93,11 @@ Token
 
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="name" type="string" required=true %}
-Neuron raw name
+Nom du neurone
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="url" type="string" required=true %}
-Neuron git url
+Son url github
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
@@ -87,11 +120,11 @@ Neuron git url
 
 {% api-method method="post" host="http://onyx-url" path="/api/neurons/remove" %}
 {% api-method-summary %}
-Remove Neuron
+Supprimer un Neurone
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Remove a neuron
+Supprimer un neurone
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -104,7 +137,7 @@ Token
 
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="name" type="string" required=true %}
-Neuron raw name
+Nom
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}

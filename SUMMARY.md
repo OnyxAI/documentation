@@ -20,7 +20,7 @@
 
 ## API
 
-* [Neurons](api/neurons.md)
-* [Settings](api/settings.md)
-* [Users](api/users.md)
+* [Neurones](api/neurons.md)
+* [Paramètres](api/settings.md)
+* [Utilisateurs](api/users.md)
 
